@@ -1,0 +1,11 @@
+/home/christopherwilliams/Development/youtube_xml/tests/csharp-test/bin/Debug/netcoreapp3.1/csharp-test
+/home/christopherwilliams/Development/youtube_xml/tests/csharp-test/bin/Debug/netcoreapp3.1/csharp-test.deps.json
+/home/christopherwilliams/Development/youtube_xml/tests/csharp-test/bin/Debug/netcoreapp3.1/csharp-test.runtimeconfig.json
+/home/christopherwilliams/Development/youtube_xml/tests/csharp-test/bin/Debug/netcoreapp3.1/csharp-test.runtimeconfig.dev.json
+/home/christopherwilliams/Development/youtube_xml/tests/csharp-test/bin/Debug/netcoreapp3.1/csharp-test.dll
+/home/christopherwilliams/Development/youtube_xml/tests/csharp-test/bin/Debug/netcoreapp3.1/csharp-test.pdb
+/home/christopherwilliams/Development/youtube_xml/tests/csharp-test/obj/Debug/netcoreapp3.1/csharp-test.csprojAssemblyReference.cache
+/home/christopherwilliams/Development/youtube_xml/tests/csharp-test/obj/Debug/netcoreapp3.1/csharp-test.AssemblyInfoInputs.cache
+/home/christopherwilliams/Development/youtube_xml/tests/csharp-test/obj/Debug/netcoreapp3.1/csharp-test.AssemblyInfo.cs
+/home/christopherwilliams/Development/youtube_xml/tests/csharp-test/obj/Debug/netcoreapp3.1/csharp-test.dll
+/home/christopherwilliams/Development/youtube_xml/tests/csharp-test/obj/Debug/netcoreapp3.1/csharp-test.pdb

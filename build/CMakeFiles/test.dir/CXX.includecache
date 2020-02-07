@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/christopherwilliams/Development/youtube_xml/src/test.cpp
+cpprest/http_client.h
+-
+cpprest/filestream.h
+-
+iostream
+-
+

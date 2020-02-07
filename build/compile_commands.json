@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/christopherwilliams/Development/youtube_xml/build",
+  "command": "/bin/clang++-9  -DCPPREST_FORCE_HTTP_CLIENT_ASIO -DCPPREST_FORCE_HTTP_LISTENER_ASIO -DCPPREST_NO_SSL_LEAK_SUPPRESS -Dtest_EXPORTS -I/home/christopherwilliams/Development/youtube_xml/include  -O2 -DNDEBUG -fPIC   -o CMakeFiles/test.dir/src/test.cpp.o -c /home/christopherwilliams/Development/youtube_xml/src/test.cpp",
+  "file": "/home/christopherwilliams/Development/youtube_xml/src/test.cpp"
+}
+]
