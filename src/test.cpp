@@ -2,64 +2,32 @@
 #include <cpprest/filestream.h>
 #include <iostream>
 
-using namespace utility;                    // Common utilities like string conversions
-using namespace web;                        // Common features like URIs.
-using namespace web::http;                  // Common HTTP functionality
-using namespace web::http::client;          // HTTP client features
-using namespace concurrency::streams;       // Asynchronous streams
+extern "C"
+char* test_ip(){
+    std::string test_string;
+    web::http::client::http_client client(U("http://ip.jsontest.com/"));
+    client.request(web::http::methods::GET).then([&test_string](web::http::http_response response){
+        test_string = response.extract_string().get();
+    })
+    .wait();
+
+    const std::string::size_type size = test_string.size();
+    char *buffer = new char[size + 1];   //we need extra char for NUL
+    memcpy(buffer, test_string.c_str(), size + 1);
+
+    std::cout << "Hello from C++: " << buffer << std::endl;
+    return buffer;
+}
 
 extern "C"
-int hello()
+int hello(char* url)
 {
-    auto fileStream = std::make_shared<ostream>();
-
-    // Open stream to output file.
-    pplx::task<void> requestTask = fstream::open_ostream(U("results.html")).then([=](ostream outFile)
-    {
-        *fileStream = outFile;
-
-        // Create http_client to send the request.
-        http_client client(U("http://time.jsontest.com"));
-        http_request request(methods::GET);
-        request.headers().add("Content-Type","json");
-
-        // Build request URI and start the request.
-        //uri_builder builder(U("/search"));
-        //builder.append_query(U("q"), U("cpprestsdk github"));
-        return client.request(request);
+    std::string s;
+    web::http::client::http_client client(U(url));
+    auto response = client.request(web::http::methods::GET).then([&s](web::http::http_response response){
+        s = response.extract_string().get();
     })
-
-    // Handle response headers arriving.
-    .then([=](http_response response)
-    {
-        json::value json = response.extract_json().get();
-        // auto a = json.at(U("data")).as_array();
-        // for (uint i = 0; i < a.size(); i++)
-        // {
-        //     std::cout << a[i].at("email") << std::endl;
-        // }
-        std::cout << json.at(U("time")) << std::endl;
-        
-
-        // Write response body into the file.
-        return response.body().read_to_end(fileStream->streambuf());
-    })
-
-    // Close the file stream.
-    .then([=](size_t)
-    {
-        return fileStream->close();
-    });
-
-    // Wait for all the outstanding I/O to complete and handle any exceptions
-    try
-    {
-        requestTask.wait();
-    }
-    catch (const std::exception &e)
-    {
-        printf("Error exception:%s\n", e.what());
-    }
-
+    .wait();
+    std::cout << s << std::endl;
     return 0;
 }

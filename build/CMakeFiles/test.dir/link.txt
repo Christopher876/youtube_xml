@@ -1,1 +1,0 @@
-/bin/clang++-9 -fPIC -O2 -DNDEBUG  -shared -Wl,-soname,libtest.so -o libtest.so CMakeFiles/test.dir/src/test.cpp.o  /usr/lib64/libcpprest.so.2.10 -lpthread /usr/lib64/libssl.so /usr/lib64/libcrypto.so 

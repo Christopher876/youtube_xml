@@ -1,3 +1,0 @@
-/home/christopherwilliams/Development/youtube_xml/build/CMakeFiles/rebuild_cache.dir
-/home/christopherwilliams/Development/youtube_xml/build/CMakeFiles/test.dir
-/home/christopherwilliams/Development/youtube_xml/build/CMakeFiles/edit_cache.dir
